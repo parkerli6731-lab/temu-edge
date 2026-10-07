@@ -81,6 +81,31 @@ npx wrangler pages deploy out --project-name=temu-edge
 
 ---
 
+## 💳 边缘支付网关与购物车微岛屿架构 (Payment & Cart Architecture)
+
+本项目采用 **微岛屿客户端状态总线 + Cloudflare Pages Functions 边缘 Serverless 混合架构**：
+
+### 1. 购物车交互入口 (3 级全域触达)
+- **顶部导航栏徽标**：`🛒 Cart (N)` 响应式动态徽标，毫秒级同步 `localStorage`。
+- **商品详情页双核直达**：加购按键下方集成 `【🛒 Open Cart】` 与 `【💳 Payment API】` 快捷按钮。
+- **全局悬浮购物车小球**：右下角常驻 `🛒 Shopping Cart (N)`，全站任意页面一键呼出右侧抽屉。
+
+### 2. Cloudflare Edge 实时支付接口清单 (Live Endpoints)
+- 🟢 **创建结算会话 (Create Checkout Session)**:  
+  `POST https://temu-edge.pages.dev/api/checkout/create-session`
+- 🟢 **支付成功异步 Webhook 网关 (Payment Webhook)**:  
+  `POST https://temu-edge.pages.dev/api/webhooks/payment-succeeded`
+- 🟢 **边缘健康检查 (Edge Healthcheck)**:  
+  `GET https://temu-edge.pages.dev/api/health`
+
+### 3. 支付网关接入 SOP (Stripe / Apple Pay / PayPal)
+1. **环境变量注入**：在 Cloudflare Pages 设置中配置 `STRIPE_SECRET_KEY`、`STRIPE_WEBHOOK_SECRET` 与 `PAYPAL_CLIENT_ID`。
+2. **边缘会话创建**：前端微岛屿在用户点击结算时调用 `/api/checkout/create-session`，Cloudflare Worker 生成并返回对应渠道的 `clientSecret` 或 `sessionId`。
+3. **安全交互弹窗**：客户端根据返回秘钥唤起 Apple Pay 1-Click Fast Pass 或 Stripe 3D Secure 银行验证。
+4. **异步出库通知**：支付成功后，第三方网关回调 `/api/webhooks/payment-succeeded`，边缘验证签名后向拼多多/Temu 主仓派发履约出库 RPC。
+
+---
+
 ## 🛠️ 多智能体并发矩阵 (Claude Code SOP-6)
 
 ```bash
@@ -93,3 +118,4 @@ cd ../temu-worktree-feat-new-feature
 
 ## 📄 许可与贡献
 本项目遵循 MIT 协议。基于 AI-Native Engineering 范式开发。
+
