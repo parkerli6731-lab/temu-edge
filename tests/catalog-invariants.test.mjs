@@ -65,3 +65,29 @@ test('【Cloudflare 不变量 2】零成本构建期媒体管线产物验证', (
     }
   }
 });
+
+test('【PDP 详情页深度规格与真实描述核验】10+项技术参数、长图文描述、包装清单与买家评测', () => {
+  const catalogPath = path.resolve('data/catalog.json');
+  const products = JSON.parse(fs.readFileSync(catalogPath, 'utf-8'));
+
+  for (const p of products) {
+    // 1. 深度长图文描述
+    assert.ok(typeof p.longDescription === 'string' && p.longDescription.length >= 200, `SPU: ${p.spuId} 必须包含至少 200 字深度长图文描述`);
+
+    // 2. 核心卖点
+    assert.ok(Array.isArray(p.highlights) && p.highlights.length >= 4, `SPU: ${p.spuId} 必须包含至少 4 项核心亮点`);
+
+    // 3. 10+ 项深度规格参数
+    assert.ok(Array.isArray(p.detailedSpecs) && p.detailedSpecs.length >= 10, `SPU: ${p.spuId} 必须包含至少 10 项深度规格参数，实际: ${p.detailedSpecs?.length}`);
+
+    // 4. 包装清单
+    assert.ok(Array.isArray(p.packageContents) && p.packageContents.length >= 3, `SPU: ${p.spuId} 必须包含至少 3 项包装清单`);
+
+    // 5. 真实买家评测
+    assert.ok(Array.isArray(p.reviews) && p.reviews.length >= 3, `SPU: ${p.spuId} 必须包含至少 3 条真实买家评测`);
+
+    // 6. 常见问答
+    assert.ok(Array.isArray(p.faqs) && p.faqs.length >= 3, `SPU: ${p.spuId} 必须包含至少 3 条常见问答`);
+  }
+});
+

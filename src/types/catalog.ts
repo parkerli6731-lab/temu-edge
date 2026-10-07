@@ -21,6 +21,20 @@ export interface SkuVariant {
   readonly attributes: Record<string, string>; // e.g. { Color: "Black", Size: "M" }
 }
 
+export interface CustomerReview {
+  readonly author: string;
+  readonly rating: number;
+  readonly date: string;
+  readonly verified: boolean;
+  readonly country: string;
+  readonly comment: string;
+}
+
+export interface FaqItem {
+  readonly question: string;
+  readonly answer: string;
+}
+
 export interface ProductItem {
   readonly spuId: string;
   readonly skuId: string;
@@ -28,6 +42,8 @@ export interface ProductItem {
   readonly category: string;
   readonly categorySlug: string;
   readonly summary: string;
+  readonly longDescription?: string;
+  readonly highlights?: readonly string[];
   readonly basePriceCents: number;       // 原价/基准价 (分)
   readonly promotionalPriceCents: number; // 促销秒杀价 (分)
   readonly currency: 'USD' | 'EUR' | 'CAD' | 'GBP';
@@ -38,6 +54,10 @@ export interface ProductItem {
   readonly heroImageBaseName: string;    // 母版图基准文件名 (构建期对应 Sharp WebP 阶梯)
   readonly galleryBaseNames: readonly string[];
   readonly specs: readonly ProductSpec[];
+  readonly detailedSpecs?: readonly ProductSpec[];
+  readonly packageContents?: readonly string[];
+  readonly reviews?: readonly CustomerReview[];
+  readonly faqs?: readonly FaqItem[];
   readonly tags: readonly string[];
   readonly isFlashSale: boolean;
   readonly updatedAt: string;
@@ -62,6 +82,20 @@ export const SkuVariantSchema = z.object({
   attributes: z.record(z.string()),
 });
 
+export const CustomerReviewSchema = z.object({
+  author: z.string().min(1),
+  rating: z.number().min(1).max(5),
+  date: z.string(),
+  verified: z.boolean(),
+  country: z.string(),
+  comment: z.string().min(1),
+});
+
+export const FaqItemSchema = z.object({
+  question: z.string().min(1),
+  answer: z.string().min(1),
+});
+
 // Zod 运行时 Schema 校验门禁 (Parity Gate)
 export const ProductSchema = z.object({
   spuId: z.string().min(1),
@@ -70,6 +104,8 @@ export const ProductSchema = z.object({
   category: z.string().min(1),
   categorySlug: z.string().regex(/^[a-z0-9-]+$/),
   summary: z.string().min(5),
+  longDescription: z.string().optional(),
+  highlights: z.array(z.string()).optional(),
   basePriceCents: z.number().int().positive(),
   promotionalPriceCents: z.number().int().positive(),
   currency: z.enum(['USD', 'EUR', 'CAD', 'GBP']),
@@ -83,6 +119,13 @@ export const ProductSchema = z.object({
     label: z.string(),
     value: z.string(),
   })),
+  detailedSpecs: z.array(z.object({
+    label: z.string(),
+    value: z.string(),
+  })).optional(),
+  packageContents: z.array(z.string()).optional(),
+  reviews: z.array(CustomerReviewSchema).optional(),
+  faqs: z.array(FaqItemSchema).optional(),
   tags: z.array(z.string()),
   isFlashSale: z.boolean(),
   updatedAt: z.string(),
