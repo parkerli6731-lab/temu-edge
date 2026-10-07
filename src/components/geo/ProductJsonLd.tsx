@@ -10,7 +10,7 @@ export const ProductJsonLd: React.FC<{ product: ProductItem }> = ({ product }) =
     sku: product.skuId,
     mpn: product.spuId,
     image: [
-      `https://temu-edge.pages.dev/images/optimized/${product.heroImageBaseName}-1024w.webp`,
+      `https://temu-edge.pages.dev/images/catalog/${product.heroImageBaseName}-640w.webp`,
     ],
     brand: {
       '@type': 'Brand',

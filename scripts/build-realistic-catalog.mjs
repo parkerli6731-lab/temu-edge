@@ -113,7 +113,7 @@ export const PHOTO_MAP = {
   'cordless-washer': 'photo-1520340356584-f9917d1eea6f',
   'solar-diffuser': 'photo-1615397349754-cfa2066a298e',
   'car-floormats': 'photo-1503376780353-7e6692767b70',
-  'tire-inflator': 'photo-1486006920555-c77dce18193b',
+  'tire-inflator': 'photo-1619642751034-765dfdf7c58e',
   'jump-starter': 'photo-1511919884226-fd3cad34687c',
   'microfiber-towels': 'photo-1607860108855-64acf2078ed9',
   'dog-car-cover': 'photo-1583337130417-3346a1be7dee',
@@ -133,7 +133,7 @@ export const PHOTO_MAP = {
 
   // 11. 庭院、草坪园艺
   'solar-lights': 'photo-1585320806297-9794b3e4eeae',
-  'expandable-hose': 'photo-1592417817098-8f3d69109853',
+  'expandable-hose': 'photo-1584467735871-8e85353a8413',
   'pruning-shears': 'photo-1416879595882-3373a0480b5b',
   'sun-shade-sail': 'photo-1513694203232-719a280e022f',
   'solar-fountain': 'photo-1519331379826-f10be5486c6f',
@@ -169,7 +169,7 @@ export const PHOTO_MAP = {
 
   // 14. 办公与文具
   'seat-cushion': 'photo-1586023492125-27b2c045efd7',
-  'gel-pens-set': 'photo-1585336261026-6218f2f2526e',
+  'gel-pens-set': 'photo-1569683795645-b62e50fbf103',
   'laptop-stand': 'photo-1527864550417-7fd91fc51a46',
   'desk-pad': 'photo-1518455027359-f3f8164ba6bd',
   'paper-shredder': 'photo-1589829545856-d10d557cf95f',

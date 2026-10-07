@@ -219,7 +219,7 @@ export function CartDrawerIsland() {
                       className="flex gap-3 bg-slate-50 p-3 rounded-xl border border-gray-200"
                     >
                       <img
-                        src={`/images/optimized/${item.heroImageBaseName}-384w.webp`}
+                        src={`/images/catalog/${item.heroImageBaseName}-384w.webp?v=20261007`}
                         alt={item.title}
                         className="w-20 h-20 object-cover rounded-lg bg-gray-200 flex-shrink-0"
                       />

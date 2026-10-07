@@ -13,16 +13,19 @@ export const ResponsiveCatalogImage: React.FC<ResponsiveImageProps> = ({
   className = '',
   priority = false,
 }) => {
-  const srcSet = `
-    /images/optimized/${baseName}-384w.webp 384w,
-    /images/optimized/${baseName}-640w.webp 640w,
-    /images/optimized/${baseName}-1024w.webp 1024w
-  `;
+  const version = 'v=20261007';
+  const isGallery = baseName.includes('-detail') || baseName.includes('-package');
+  const srcSet = isGallery
+    ? `/images/catalog/${baseName}-640w.webp?${version} 640w`
+    : `
+        /images/catalog/${baseName}-384w.webp?${version} 384w,
+        /images/catalog/${baseName}-640w.webp?${version} 640w
+      `;
 
   return (
     <div className={`relative overflow-hidden bg-slate-100 ${className}`}>
       <img
-        src={`/images/optimized/${baseName}-640w.webp`}
+        src={`/images/catalog/${baseName}-640w.webp?${version}`}
         srcSet={srcSet}
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         alt={alt}

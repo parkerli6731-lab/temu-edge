@@ -38,7 +38,7 @@ const server = http.createServer((req, res) => {
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
 
     // 模拟 Cloudflare _headers 边缘缓存策略
-    if (pathname.startsWith('/images/optimized/') || pathname.startsWith('/_next/static/')) {
+    if (pathname.startsWith('/images/optimized/') || pathname.startsWith('/images/catalog/') || pathname.startsWith('/_next/static/')) {
       res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
     } else if (ext === '.html') {
       res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
