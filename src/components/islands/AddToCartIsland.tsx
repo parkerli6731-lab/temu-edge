@@ -107,6 +107,35 @@ export function AddToCartIsland({
         </span>
       </button>
 
+      {/* 快捷查看购物车与支付 API 接口 */}
+      <div className="grid grid-cols-2 gap-2 pt-1">
+        <button
+          type="button"
+          onClick={() => {
+            if (typeof window !== 'undefined') {
+              window.dispatchEvent(new CustomEvent('temu-cart-toggle', { detail: { open: true } }));
+            }
+          }}
+          className="py-2 px-3 rounded-lg font-bold text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 text-xs transition-colors flex items-center justify-center gap-1 shadow-xs cursor-pointer"
+        >
+          <span>🛒</span>
+          <span>Open Cart</span>
+        </button>
+
+        <button
+          type="button"
+          onClick={() => {
+            if (typeof window !== 'undefined') {
+              window.dispatchEvent(new CustomEvent('temu-checkout-toggle', { detail: { open: true } }));
+            }
+          }}
+          className="py-2 px-3 rounded-lg font-bold text-temu-darkOrange bg-orange-100 hover:bg-orange-200 text-xs transition-colors flex items-center justify-center gap-1 shadow-xs cursor-pointer"
+        >
+          <span>💳</span>
+          <span>Payment API</span>
+        </button>
+      </div>
+
       <p className="text-xs text-center text-gray-500">
         🔒 Encrypted 256-bit checkout • Free shipping & 90-day returns
       </p>
