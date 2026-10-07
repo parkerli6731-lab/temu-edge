@@ -1,0 +1,46 @@
+name: Cloudflare Pages Continuous Deployment
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: cloudflare-pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Node.js 运行时
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: 安装生产依赖
+        run: npm ci
+
+      - name: 契约对账与数据完整性校验 (Codex SOP-2)
+        run: npm run verify:parity
+
+      - name: 构建期 Sharp LANCZOS WebP 媒体管线 (Cloudflare SOP-3)
+        run: npm run images:optimize
+
+      - name: 运行全量不变量与微岛屿回归测试 (Claude Code SOP-3)
+        run: npm test
+
+      - name: Next.js 14 SSG 纯静态导出 (Cloudflare SOP-4)
+        run: npm run build
+
+      - name: 部署至 Cloudflare Pages 全球 Anycast 边缘网络 (Cloudflare SOP-5)
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 'efd7ba849c27d36e3982242b6b10a988'
+          command: pages deploy out --project-name=temu-edge

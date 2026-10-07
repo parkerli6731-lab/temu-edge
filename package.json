@@ -11,6 +11,7 @@
     "verify:parity": "tsx scripts/validate-catalog-parity.ts",
     "images:optimize": "node scripts/optimize-images.mjs",
     "test": "node --test tests/*.test.mjs",
+    "preview": "node scripts/serve-edge-preview.mjs",
     "pipeline:full": "npm run verify:parity && npm run images:optimize && npm run test && npm run build"
   },
   "dependencies": {
