@@ -12,6 +12,15 @@ export interface ProductSpec {
   readonly value: string;
 }
 
+export interface SkuVariant {
+  readonly skuId: string;
+  readonly name: string;
+  readonly priceCents: number;
+  readonly originalPriceCents: number;
+  readonly stock: number;
+  readonly attributes: Record<string, string>; // e.g. { Color: "Black", Size: "M" }
+}
+
 export interface ProductItem {
   readonly spuId: string;
   readonly skuId: string;
@@ -32,6 +41,7 @@ export interface ProductItem {
   readonly tags: readonly string[];
   readonly isFlashSale: boolean;
   readonly updatedAt: string;
+  readonly skuVariants?: readonly SkuVariant[];
 }
 
 export interface CategoryItem {
@@ -40,7 +50,17 @@ export interface CategoryItem {
   readonly heroImageBaseName: string;
   readonly description: string;
   readonly productCount: number;
+  readonly skuCount?: number;
 }
+
+export const SkuVariantSchema = z.object({
+  skuId: z.string().min(1),
+  name: z.string().min(1),
+  priceCents: z.number().int().positive(),
+  originalPriceCents: z.number().int().positive(),
+  stock: z.number().int().nonnegative(),
+  attributes: z.record(z.string()),
+});
 
 // Zod 运行时 Schema 校验门禁 (Parity Gate)
 export const ProductSchema = z.object({
@@ -66,6 +86,7 @@ export const ProductSchema = z.object({
   tags: z.array(z.string()),
   isFlashSale: z.boolean(),
   updatedAt: z.string(),
+  skuVariants: z.array(SkuVariantSchema).optional(),
 });
 
 export const CatalogSchema = z.array(ProductSchema);

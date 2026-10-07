@@ -151,6 +151,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
                 currency={product.currency}
                 stockCount={product.stockCount}
                 heroImageBaseName={product.heroImageBaseName}
+                skuVariants={product.skuVariants}
               />
             </div>
 

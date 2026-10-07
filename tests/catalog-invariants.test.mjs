@@ -22,6 +22,29 @@ test('【Codex 不变量 1】目录数据契约与价格整数一致性', () => 
   }
 });
 
+test('【Temu 全矩阵验证】18 一级品类与 1,800 SKU 完整性核验', () => {
+  const catalogPath = path.resolve('data/catalog.json');
+  const products = JSON.parse(fs.readFileSync(catalogPath, 'utf-8'));
+
+  const categories = new Set(products.map((p) => p.categorySlug));
+  assert.equal(categories.size, 18, '必须包含严格的 18 个一级品类');
+
+  let totalSkus = 0;
+  const categorySkus = new Map();
+
+  for (const p of products) {
+    const skuCount = p.skuVariants ? p.skuVariants.length : 1;
+    totalSkus += skuCount;
+    categorySkus.set(p.categorySlug, (categorySkus.get(p.categorySlug) || 0) + skuCount);
+  }
+
+  assert.equal(totalSkus, 1800, '必须包含精准的 1,800 个全量 SKU 资产');
+
+  for (const [cat, count] of categorySkus.entries()) {
+    assert.equal(count, 100, `品类 [${cat}] 必须精准包含 100 个 SKU，实际: ${count}`);
+  }
+});
+
 test('【Cloudflare 不变量 2】零成本构建期媒体管线产物验证', () => {
   const manifestPath = path.resolve('public/images/optimized/image-manifest.json');
   assert.ok(fs.existsSync(manifestPath), 'image-manifest.json 必须存在');

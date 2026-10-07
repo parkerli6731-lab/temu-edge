@@ -44,14 +44,17 @@ export const Navbar: React.FC = () => {
           </div>
         </div>
 
-        <nav className="flex items-center gap-4 text-xs font-semibold">
-          <Link href="/" className="hover:text-yellow-400 transition-colors">
+        <nav className="flex items-center gap-3 md:gap-4 text-xs font-semibold">
+          <Link href="/#matrix" className="text-yellow-300 hover:text-white transition-colors bg-white/10 px-2 py-1 rounded">
+            📊 18品类矩阵 (1800 SKU)
+          </Link>
+          <Link href="/" className="hover:text-yellow-400 transition-colors hidden sm:inline">
             🔥 Flash Deals
           </Link>
-          <Link href="/category/electronics/" className="hover:text-yellow-400 transition-colors hidden sm:inline">
+          <Link href="/category/electronics/" className="hover:text-yellow-400 transition-colors hidden md:inline">
             Electronics
           </Link>
-          <Link href="/category/home-kitchen/" className="hover:text-yellow-400 transition-colors hidden md:inline">
+          <Link href="/category/home-kitchen/" className="hover:text-yellow-400 transition-colors hidden lg:inline">
             Home
           </Link>
           <CartNavbarButtonIsland />
