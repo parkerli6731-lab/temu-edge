@@ -144,10 +144,13 @@ export default async function ProductDetailPage({ params }: PageProps) {
             {/* 微岛屿 2: 动态加购与数量计算器 */}
             <div className="mb-6">
               <AddToCartIsland
+                spuId={product.spuId}
                 skuId={product.skuId}
+                title={product.title}
                 promotionalPriceCents={product.promotionalPriceCents}
                 currency={product.currency}
                 stockCount={product.stockCount}
+                heroImageBaseName={product.heroImageBaseName}
               />
             </div>
 

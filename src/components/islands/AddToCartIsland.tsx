@@ -1,19 +1,26 @@
 'use client';
 
 import React, { useState } from 'react';
+import { addToCart } from '@/lib/cart-store';
 
 interface AddToCartProps {
+  spuId: string;
   skuId: string;
+  title: string;
   promotionalPriceCents: number;
   currency: string;
   stockCount: number;
+  heroImageBaseName: string;
 }
 
 export function AddToCartIsland({
+  spuId,
   skuId,
+  title,
   promotionalPriceCents,
   currency,
   stockCount,
+  heroImageBaseName,
 }: AddToCartProps) {
   const [quantity, setQuantity] = useState<number>(1);
   const [isAdding, setIsAdding] = useState<boolean>(false);
@@ -27,12 +34,23 @@ export function AddToCartIsland({
 
   const handleAddToCart = () => {
     setIsAdding(true);
-    // 模拟通过 Cloudflare Worker 安全代理向核心交易服务发起 RPC 写入
+    // 写入客户端购物车并联动开启抽屉
     setTimeout(() => {
+      addToCart(
+        {
+          spuId,
+          skuId,
+          title,
+          promotionalPriceCents,
+          currency,
+          heroImageBaseName,
+        },
+        quantity
+      );
       setIsAdding(false);
       setAddedSuccess(true);
-      setTimeout(() => setAddedSuccess(false), 3000);
-    }, 400);
+      setTimeout(() => setAddedSuccess(false), 2500);
+    }, 250);
   };
 
   return (
@@ -73,13 +91,20 @@ export function AddToCartIsland({
         type="button"
         onClick={handleAddToCart}
         disabled={isAdding}
-        className={`w-full py-3.5 px-6 rounded-full font-extrabold text-white text-base shadow-lg transition-all duration-200 transform active:scale-95 ${
+        className={`w-full py-3.5 px-6 rounded-full font-extrabold text-white text-base shadow-lg transition-all duration-200 transform active:scale-95 flex items-center justify-center gap-2 ${
           addedSuccess
             ? 'bg-emerald-600 hover:bg-emerald-700'
             : 'bg-temu-orange hover:bg-temu-darkOrange'
         }`}
       >
-        {isAdding ? 'Adding to Cart...' : addedSuccess ? '✓ Added to Cart!' : '⚡ ADD TO CART'}
+        <span>🛒</span>
+        <span>
+          {isAdding
+            ? 'Adding to Cart...'
+            : addedSuccess
+            ? '✓ Added to Cart! (Drawer Opened)'
+            : '⚡ ADD TO CART'}
+        </span>
       </button>
 
       <p className="text-xs text-center text-gray-500">

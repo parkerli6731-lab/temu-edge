@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { RegionCurrencyIsland } from './islands/RegionCurrencyIsland';
+import { CartNavbarButtonIsland } from './islands/CartNavbarButtonIsland';
 
 export const Navbar: React.FC = () => {
   return (
@@ -53,10 +54,7 @@ export const Navbar: React.FC = () => {
           <Link href="/category/home-kitchen/" className="hover:text-yellow-400 transition-colors hidden md:inline">
             Home
           </Link>
-          <div className="flex items-center gap-1 bg-white/10 px-2.5 py-1.5 rounded-full hover:bg-white/20 cursor-pointer">
-            <span>🛒</span>
-            <span className="font-mono text-yellow-400 font-bold">0</span>
-          </div>
+          <CartNavbarButtonIsland />
         </nav>
       </div>
     </header>

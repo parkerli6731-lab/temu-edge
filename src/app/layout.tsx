@@ -3,6 +3,7 @@ import './globals.css';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { GamificationWheelIsland } from '@/components/islands/GamificationWheelIsland';
+import { CartDrawerIsland } from '@/components/islands/CartDrawerIsland';
 
 export const metadata: Metadata = {
   title: 'Temu Edge - Factory Direct Deals | Ultra Fast Global Delivery',
@@ -25,6 +26,7 @@ export default function RootLayout({
         <div className="flex-1">
           {children}
         </div>
+        <CartDrawerIsland />
         <GamificationWheelIsland />
         <Footer />
       </body>
