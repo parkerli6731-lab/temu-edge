@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /checkout/
+
+# 显式放行顶级生成式 AI 搜索引擎爬虫 (SOP-6 GEO 规范)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://temu-edge.pages.dev/sitemap.xml

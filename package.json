@@ -1,0 +1,33 @@
+{
+  "name": "temu-edge-catalog",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Temu.com Headless Catalog Edge Deployment on Cloudflare Pages/Workers with Micro-Islands Architecture",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "verify:parity": "tsx scripts/validate-catalog-parity.ts",
+    "images:optimize": "node scripts/optimize-images.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "pipeline:full": "npm run verify:parity && npm run images:optimize && npm run test && npm run build"
+  },
+  "dependencies": {
+    "next": "^14.2.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "sharp": "^0.33.5",
+    "tailwindcss": "^3.4.13",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  }
+}

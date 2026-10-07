@@ -1,0 +1,21 @@
+# Cloudflare Pages 边缘缓存策略与安全头标规范 (SOP-5)
+
+# 1. 静态构建期 WebP 媒体文件：永久强缓存 (1 年)，消除云端再计算账单
+/images/optimized/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# 2. Next.js 静态编译 Chunk 脚本与样式：带哈希永久缓存
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# 3. HTML 页面：强制 revalidate，配合 Cloudflare Cache Purge 实现原子快照瞬间净化
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# 4. 全局安全防御头
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=()

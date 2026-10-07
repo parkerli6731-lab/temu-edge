@@ -1,0 +1,189 @@
+{
+  "blender-fruit": {
+    "versions": [
+      {
+        "width": 384,
+        "path": "/images/optimized/blender-fruit-384w.webp"
+      },
+      {
+        "width": 640,
+        "path": "/images/optimized/blender-fruit-640w.webp"
+      },
+      {
+        "width": 1024,
+        "path": "/images/optimized/blender-fruit-1024w.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRowAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSC0AAAABJyAkIP7flUhuREQ8BoWQJDmzdwKL8gjvr5UTQET/JyAE4MKqBx9VzwxTjSsAVlA4IDgAAACwAQCdASoQABAABUB8JbACdADbrqwAAO04RZikrqBS7LuIyYErk7y10L/3x+7flo2iDPI22xAAAA=="
+  },
+  "earbuds-case": {
+    "versions": [
+      {
+        "width": 384,
+        "path": "/images/optimized/earbuds-case-384w.webp"
+      },
+      {
+        "width": 640,
+        "path": "/images/optimized/earbuds-case-640w.webp"
+      },
+      {
+        "width": 1024,
+        "path": "/images/optimized/earbuds-case-1024w.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRooAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSC0AAAABJyAkIP7flUhuREQ8BoWQJDmzdwKL8gjvr5UTQET/JyAE4MKqBx9VzwxTjSsAVlA4IDYAAAAQAgCdASoQABAABUB8JbACsAEPC4XJTnnAAP4Ua2PHZM5HfV/CxaJXM+rtM9Jv3WeMH1moAAA="
+  },
+  "earbuds-in-ear": {
+    "versions": [
+      {
+        "width": 384,
+        "path": "/images/optimized/earbuds-in-ear-384w.webp"
+      },
+      {
+        "width": 640,
+        "path": "/images/optimized/earbuds-in-ear-640w.webp"
+      },
+      {
+        "width": 1024,
+        "path": "/images/optimized/earbuds-in-ear-1024w.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRogAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSC0AAAABJyAkIP7flUhuREQ8BoWQJDmzdwKL8gjvr5UTQET/JyAE4MKqBx9VzwxTjSsAVlA4IDQAAABwAQCdASoQABAABUB8JbACdAFAAAD+6/nOPYCxUe651cGSzjxNcTYOG7Zgfb69UtbIAAAA"
+  },
+  "earbuds-pro": {
+    "versions": [
+      {
+        "width": 384,
+        "path": "/images/optimized/earbuds-pro-384w.webp"
+      },
+      {
+        "width": 640,
+        "path": "/images/optimized/earbuds-pro-640w.webp"
+      },
+      {
+        "width": 1024,
+        "path": "/images/optimized/earbuds-pro-1024w.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRogAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSC0AAAABJyAkIP7flUhuREQ8BoWQJDmzdwKL8gjvr5UTQET/JyAE4MKqBx9VzwxTjSsAVlA4IDQAAABwAQCdASoQABAABUB8JbACsAFAAAD+5k9hOBfSkjpP9UCnX9PTJEi3Qct5/mY7suWeDUAA"
+  },
+  "memory-pillow": {
+    "versions": [
+      {
+        "width": 384,
+        "path": "/images/optimized/memory-pillow-384w.webp"
+      },
+      {
+        "width": 640,
+        "path": "/images/optimized/memory-pillow-640w.webp"
+      },
+      {
+        "width": 1024,
+        "path": "/images/optimized/memory-pillow-1024w.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRowAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSC0AAAABJyAkIP7flUhuREQ8BoWQJDmzdwKL8gjvr5UTQET/JyAE4MKqBx9VzwxTjSsAVlA4IDgAAABwAQCdASoQABAABUB8JbACw7FAAAD+5xl5xnOXn0kdnS8HvxvmGfOysrEV8oqw39znu1S6CAAAAA=="
+  },
+  "pillow-support": {
+    "versions": [
+      {
+        "width": 384,
+        "path": "/images/optimized/pillow-support-384w.webp"
+      },
+      {
+        "width": 640,
+        "path": "/images/optimized/pillow-support-640w.webp"
+      },
+      {
+        "width": 1024,
+        "path": "/images/optimized/pillow-support-1024w.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRogAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSC0AAAABJyAkIP7flUhuREQ8BoWQJDmzdwKL8gjvr5UTQET/JyAE4MKqBx9VzwxTjSsAVlA4IDQAAABwAQCdASoQABAABUB8JbACdAFAAAD+6pA3Y9OwtJPhF8vn6EXlQR1Cquv/l8sIb76tmAAA"
+  },
+  "portable-blender": {
+    "versions": [
+      {
+        "width": 384,
+        "path": "/images/optimized/portable-blender-384w.webp"
+      },
+      {
+        "width": 640,
+        "path": "/images/optimized/portable-blender-640w.webp"
+      },
+      {
+        "width": 1024,
+        "path": "/images/optimized/portable-blender-1024w.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSC0AAAABJyAkIP7flUhuREQ8BoWQJDmzdwKL8gjvr5UTQET/JyAE4MKqBx9VzwxTjSsAVlA4IDoAAACwAQCdASoQABAABUB8JbACdAB4Mf4AAPbz6wn6Lyn4Dffvby5WadknamVG4n/Mx3ZcqJn3ZNIugAAA"
+  },
+  "smart-watch-wrist": {
+    "versions": [
+      {
+        "width": 384,
+        "path": "/images/optimized/smart-watch-wrist-384w.webp"
+      },
+      {
+        "width": 640,
+        "path": "/images/optimized/smart-watch-wrist-640w.webp"
+      },
+      {
+        "width": 1024,
+        "path": "/images/optimized/smart-watch-wrist-1024w.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRowAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSC0AAAABJyAkIP7flUhuREQ8BoWQJDmzdwKL8gjvr5UTQET/JyAE4MKqBx9VzwxTjSsAVlA4IDgAAABwAQCdASoQABAABUB8JbACdAFAAAD+6pA3Y9OwtE2Nydb5+hF5UEdQqrr/5fLCG+/k6qOxiMAAAA=="
+  },
+  "smart-watch": {
+    "versions": [
+      {
+        "width": 384,
+        "path": "/images/optimized/smart-watch-384w.webp"
+      },
+      {
+        "width": 640,
+        "path": "/images/optimized/smart-watch-640w.webp"
+      },
+      {
+        "width": 1024,
+        "path": "/images/optimized/smart-watch-1024w.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSC0AAAABJyAkIP7flUhuREQ8BoWQJDmzdwKL8gjvr5UTQET/JyAE4MKqBx9VzwxTjSsAVlA4IDwAAADwAQCdASoQABAABUB8JbACdADdjjgu+AAA+eMqfniAUWdSkDiiKCob+7C2I2vqv8djk6S5gcGgT1UAAAA="
+  },
+  "solar-lights-night": {
+    "versions": [
+      {
+        "width": 384,
+        "path": "/images/optimized/solar-lights-night-384w.webp"
+      },
+      {
+        "width": 640,
+        "path": "/images/optimized/solar-lights-night-640w.webp"
+      },
+      {
+        "width": 1024,
+        "path": "/images/optimized/solar-lights-night-1024w.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRooAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSC0AAAABJyAkIP7flUhuREQ8BoWQJDmzdwKL8gjvr5UTQET/JyAE4MKqBx9VzwxTjSsAVlA4IDYAAADwAQCdASoQABAABUB8JbACdAEO+Wgg0AAA/hRrXrrJ2cLKUKfHHITXIX/+2MUPuQjinBxeAAA="
+  },
+  "solar-lights": {
+    "versions": [
+      {
+        "width": 384,
+        "path": "/images/optimized/solar-lights-384w.webp"
+      },
+      {
+        "width": 640,
+        "path": "/images/optimized/solar-lights-640w.webp"
+      },
+      {
+        "width": 1024,
+        "path": "/images/optimized/solar-lights-1024w.webp"
+      }
+    ],
+    "blurDataURL": "data:image/webp;base64,UklGRooAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSC0AAAABJyAkIP7flUhuREQ8BoWQJDmzdwKL8gjvr5UTQET/JyAE4MKqBx9VzwxTjSsAVlA4IDYAAADQAQCdASoQABAABUB8JbACdADbYQp0AADuidGJPz67iTLW4TNnI03MxqqtVGNz+sUOKcGwwAA="
+  }
+}

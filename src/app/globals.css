@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-temu-lightBg text-slate-800 antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+}
+
+/* 针对长列表与移动端滚动的防掉帧样式 (SOP-7) */
+.lazy-content-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 400px;
+}
